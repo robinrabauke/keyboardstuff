@@ -1,0 +1,432 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.process_record_user,"ax",@progbits
+  11               	.global	process_record_user
+  13               	process_record_user:
+  14               	.LVL0:
+  15               	.LFB17:
+  16               		.file 1 "keyboards/niu_mini/keymaps/robinrabauke/keymap.c"
+   1:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** #include QMK_KEYBOARD_H
+   2:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** 
+   3:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** enum custom_keycodes {
+   4:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     FUNCTION = SAFE_RANGE,
+   5:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     IMPLICIT,
+   6:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     ARROW,
+   7:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     HEART,
+   8:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** };
+   9:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** 
+  10:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  17               		.loc 1 10 65 view -0
+  18               		.cfi_startproc
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  23               		.loc 1 10 65 is_stmt 0 view .LVU1
+  24 0000 FB01      		movw r30,r22
+  11:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     switch (keycode) {
+  25               		.loc 1 11 5 is_stmt 1 view .LVU2
+  26 0002 8F3F      		cpi r24,-1
+  27 0004 2CE5      		ldi r18,92
+  28 0006 9207      		cpc r25,r18
+  29 0008 01F0      		breq .L2
+  30 000a 00F4      		brsh .L3
+  31 000c 8E3F      		cpi r24,-2
+  32 000e 9C45      		sbci r25,92
+  33 0010 01F0      		breq .L4
+  34               	.LVL1:
+  35               	.L5:
+  12:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****         case ARROW:
+  13:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             if (record->event.pressed) {
+  14:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("=>");
+  15:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  16:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             break;
+  17:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****         case FUNCTION:
+  18:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             if (record->event.pressed) {
+  19:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => {}");
+  20:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  21:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             break;
+  22:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****         case IMPLICIT:
+  23:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             if (record->event.pressed) {
+  24:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => ()");
+  25:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  26:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             break;
+  27:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** 
+  28:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****         case HEART:
+  29:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             if (record->event.pressed) {
+  30:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("<3");
+  31:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  32:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             break;
+  33:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     }
+  34:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     return true;
+  36               		.loc 1 34 5 view .LVU3
+  35:keyboards/niu_mini/keymaps/robinrabauke/keymap.c **** };
+  37               		.loc 1 35 1 is_stmt 0 view .LVU4
+  38 0012 81E0      		ldi r24,lo8(1)
+  39               	/* epilogue start */
+  40 0014 0895      		ret
+  41               	.LVL2:
+  42               	.L3:
+  11:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****     switch (keycode) {
+  43               		.loc 1 11 5 view .LVU5
+  44 0016 8115      		cp r24,__zero_reg__
+  45 0018 2DE5      		ldi r18,93
+  46 001a 9207      		cpc r25,r18
+  47 001c 01F0      		breq .L6
+  48 001e 8130      		cpi r24,1
+  49 0020 9D45      		sbci r25,93
+  50 0022 01F4      		brne .L5
+  29:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("<3");
+  51               		.loc 1 29 13 is_stmt 1 view .LVU6
+  29:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("<3");
+  52               		.loc 1 29 16 is_stmt 0 view .LVU7
+  53 0024 8281      		ldd r24,Z+2
+  54               	.LVL3:
+  29:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("<3");
+  55               		.loc 1 29 16 view .LVU8
+  56 0026 8823      		tst r24
+  57 0028 01F0      		breq .L5
+  30:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  58               		.loc 1 30 17 is_stmt 1 view .LVU9
+  59               	.LBB2:
+  30:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  60               		.loc 1 30 17 view .LVU10
+  30:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  61               		.loc 1 30 17 view .LVU11
+  62               	.LBE2:
+  63 002a 80E0      		ldi r24,lo8(__c.3676)
+  64 002c 90E0      		ldi r25,hi8(__c.3676)
+  65 002e 00C0      		rjmp .L20
+  66               	.LVL4:
+  67               	.L6:
+  13:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("=>");
+  68               		.loc 1 13 13 view .LVU12
+  13:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("=>");
+  69               		.loc 1 13 16 is_stmt 0 view .LVU13
+  70 0030 8281      		ldd r24,Z+2
+  71               	.LVL5:
+  13:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("=>");
+  72               		.loc 1 13 16 view .LVU14
+  73 0032 8823      		tst r24
+  74 0034 01F0      		breq .L5
+  14:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  75               		.loc 1 14 17 is_stmt 1 view .LVU15
+  76               	.LBB3:
+  14:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  77               		.loc 1 14 17 view .LVU16
+  14:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  78               		.loc 1 14 17 view .LVU17
+  79               	.LBE3:
+  80 0036 80E0      		ldi r24,lo8(__c.3666)
+  81 0038 90E0      		ldi r25,hi8(__c.3666)
+  82               	.L20:
+  30:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  83               		.loc 1 30 17 is_stmt 0 view .LVU18
+  84 003a 0E94 0000 		call send_string_P
+  85               	.LVL6:
+  30:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  86               		.loc 1 30 17 view .LVU19
+  87 003e 00C0      		rjmp .L5
+  88               	.LVL7:
+  89               	.L4:
+  18:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => {}");
+  90               		.loc 1 18 13 is_stmt 1 view .LVU20
+  18:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => {}");
+  91               		.loc 1 18 16 is_stmt 0 view .LVU21
+  92 0040 8281      		ldd r24,Z+2
+  93               	.LVL8:
+  18:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => {}");
+  94               		.loc 1 18 16 view .LVU22
+  95 0042 8823      		tst r24
+  96 0044 01F0      		breq .L5
+  19:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  97               		.loc 1 19 17 is_stmt 1 view .LVU23
+  98               	.LBB4:
+  19:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+  99               		.loc 1 19 17 view .LVU24
+  19:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+ 100               		.loc 1 19 17 view .LVU25
+ 101               	.LBE4:
+ 102 0046 80E0      		ldi r24,lo8(__c.3670)
+ 103 0048 90E0      		ldi r25,hi8(__c.3670)
+ 104 004a 00C0      		rjmp .L20
+ 105               	.LVL9:
+ 106               	.L2:
+  23:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => ()");
+ 107               		.loc 1 23 13 view .LVU26
+  23:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => ()");
+ 108               		.loc 1 23 16 is_stmt 0 view .LVU27
+ 109 004c 8281      		ldd r24,Z+2
+ 110               	.LVL10:
+  23:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****                 SEND_STRING("() => ()");
+ 111               		.loc 1 23 16 view .LVU28
+ 112 004e 8823      		tst r24
+ 113 0050 01F0      		breq .L5
+  24:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+ 114               		.loc 1 24 17 is_stmt 1 view .LVU29
+ 115               	.LBB5:
+  24:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+ 116               		.loc 1 24 17 view .LVU30
+  24:keyboards/niu_mini/keymaps/robinrabauke/keymap.c ****             }
+ 117               		.loc 1 24 17 view .LVU31
+ 118               	.LBE5:
+ 119 0052 80E0      		ldi r24,lo8(__c.3673)
+ 120 0054 90E0      		ldi r25,hi8(__c.3673)
+ 121 0056 00C0      		rjmp .L20
+ 122               		.cfi_endproc
+ 123               	.LFE17:
+ 125               		.section	.progmem.data.__c.3676,"a"
+ 128               	__c.3676:
+ 129 0000 3C33 00   		.string	"<3"
+ 130               		.section	.progmem.data.__c.3673,"a"
+ 133               	__c.3673:
+ 134 0000 2829 203D 		.string	"() => ()"
+ 134      3E20 2829 
+ 134      00
+ 135               		.section	.progmem.data.__c.3670,"a"
+ 138               	__c.3670:
+ 139 0000 2829 203D 		.string	"() => {}"
+ 139      3E20 7B7D 
+ 139      00
+ 140               		.section	.progmem.data.__c.3666,"a"
+ 143               	__c.3666:
+ 144 0000 3D3E 00   		.string	"=>"
+ 145               	.global	keymaps
+ 146               		.section	.progmem.data.keymaps,"a"
+ 149               	keymaps:
+ 150 0000 2B00      		.word	43
+ 151 0002 1400      		.word	20
+ 152 0004 1A00      		.word	26
+ 153 0006 0800      		.word	8
+ 154 0008 1500      		.word	21
+ 155 000a 1700      		.word	23
+ 156 000c 1C00      		.word	28
+ 157 000e 1800      		.word	24
+ 158 0010 0C00      		.word	12
+ 159 0012 1200      		.word	18
+ 160 0014 1300      		.word	19
+ 161 0016 2A00      		.word	42
+ 162 0018 2900      		.word	41
+ 163 001a 0400      		.word	4
+ 164 001c 1600      		.word	22
+ 165 001e 0700      		.word	7
+ 166 0020 0900      		.word	9
+ 167 0022 0A00      		.word	10
+ 168 0024 0B00      		.word	11
+ 169 0026 0D00      		.word	13
+ 170 0028 0E00      		.word	14
+ 171 002a 0F00      		.word	15
+ 172 002c 3300      		.word	51
+ 173 002e 2800      		.word	40
+ 174 0030 E100      		.word	225
+ 175 0032 1D00      		.word	29
+ 176 0034 1B00      		.word	27
+ 177 0036 0600      		.word	6
+ 178 0038 1900      		.word	25
+ 179 003a 0500      		.word	5
+ 180 003c 1100      		.word	17
+ 181 003e 1000      		.word	16
+ 182 0040 3600      		.word	54
+ 183 0042 3700      		.word	55
+ 184 0044 3800      		.word	56
+ 185 0046 3400      		.word	52
+ 186 0048 0151      		.word	20737
+ 187 004a E300      		.word	227
+ 188 004c E200      		.word	226
+ 189 004e 0251      		.word	20738
+ 190 0050 E000      		.word	224
+ 191 0052 2C00      		.word	44
+ 192 0054 0000      		.word	0
+ 193 0056 0351      		.word	20739
+ 194 0058 5000      		.word	80
+ 195 005a 5100      		.word	81
+ 196 005c 5200      		.word	82
+ 197 005e 4F00      		.word	79
+ 198 0060 3500      		.word	53
+ 199 0062 0100      		.word	1
+ 200 0064 5200      		.word	82
+ 201 0066 0100      		.word	1
+ 202 0068 0100      		.word	1
+ 203 006a 3E00      		.word	62
+ 204 006c 3F00      		.word	63
+ 205 006e 4000      		.word	64
+ 206 0070 4100      		.word	65
+ 207 0072 4200      		.word	66
+ 208 0074 4300      		.word	67
+ 209 0076 0100      		.word	1
+ 210 0078 0100      		.word	1
+ 211 007a 5000      		.word	80
+ 212 007c 5100      		.word	81
+ 213 007e 4F00      		.word	79
+ 214 0080 0100      		.word	1
+ 215 0082 AA00      		.word	170
+ 216 0084 A900      		.word	169
+ 217 0086 0000      		.word	0
+ 218 0088 3C00      		.word	60
+ 219 008a 0100      		.word	1
+ 220 008c CA5C      		.word	23754
+ 221 008e C95C      		.word	23753
+ 222 0090 E100      		.word	225
+ 223 0092 3A00      		.word	58
+ 224 0094 3B00      		.word	59
+ 225 0096 3C00      		.word	60
+ 226 0098 3D00      		.word	61
+ 227 009a AC00      		.word	172
+ 228 009c AB00      		.word	171
+ 229 009e 0100      		.word	1
+ 230 00a0 C85C      		.word	23752
+ 231 00a2 C75C      		.word	23751
+ 232 00a4 C45C      		.word	23748
+ 233 00a6 C35C      		.word	23747
+ 234 00a8 0100      		.word	1
+ 235 00aa 0100      		.word	1
+ 236 00ac 0100      		.word	1
+ 237 00ae 0100      		.word	1
+ 238 00b0 0100      		.word	1
+ 239 00b2 AE00      		.word	174
+ 240 00b4 0000      		.word	0
+ 241 00b6 0100      		.word	1
+ 242 00b8 C65C      		.word	23750
+ 243 00ba C55C      		.word	23749
+ 244 00bc D45C      		.word	23764
+ 245 00be C25C      		.word	23746
+ 246 00c0 3500      		.word	53
+ 247 00c2 3A00      		.word	58
+ 248 00c4 3B00      		.word	59
+ 249 00c6 3C00      		.word	60
+ 250 00c8 3D00      		.word	61
+ 251 00ca 3E00      		.word	62
+ 252 00cc 3F00      		.word	63
+ 253 00ce 4000      		.word	64
+ 254 00d0 4100      		.word	65
+ 255 00d2 4200      		.word	66
+ 256 00d4 4300      		.word	67
+ 257 00d6 0100      		.word	1
+ 258 00d8 3502      		.word	565
+ 259 00da 1E02      		.word	542
+ 260 00dc 1F02      		.word	543
+ 261 00de 2002      		.word	544
+ 262 00e0 2102      		.word	545
+ 263 00e2 2202      		.word	546
+ 264 00e4 2302      		.word	547
+ 265 00e6 2402      		.word	548
+ 266 00e8 2502      		.word	549
+ 267 00ea 2F00      		.word	47
+ 268 00ec 3000      		.word	48
+ 269 00ee 3100      		.word	49
+ 270 00f0 005D      		.word	23808
+ 271 00f2 FE5C      		.word	23806
+ 272 00f4 FF5C      		.word	23807
+ 273 00f6 0100      		.word	1
+ 274 00f8 0100      		.word	1
+ 275 00fa 0100      		.word	1
+ 276 00fc 0100      		.word	1
+ 277 00fe 0100      		.word	1
+ 278 0100 0100      		.word	1
+ 279 0102 3800      		.word	56
+ 280 0104 015D      		.word	23809
+ 281 0106 0100      		.word	1
+ 282 0108 0100      		.word	1
+ 283 010a 0100      		.word	1
+ 284 010c 0100      		.word	1
+ 285 010e 0100      		.word	1
+ 286 0110 0100      		.word	1
+ 287 0112 0100      		.word	1
+ 288 0114 0000      		.word	0
+ 289 0116 0100      		.word	1
+ 290 0118 0100      		.word	1
+ 291 011a 0100      		.word	1
+ 292 011c 0100      		.word	1
+ 293 011e 0100      		.word	1
+ 294 0120 0000      		.word	0
+ 295 0122 1E00      		.word	30
+ 296 0124 1F00      		.word	31
+ 297 0126 2000      		.word	32
+ 298 0128 0000      		.word	0
+ 299 012a 0000      		.word	0
+ 300 012c 2F02      		.word	559
+ 301 012e 3002      		.word	560
+ 302 0130 0000      		.word	0
+ 303 0132 0000      		.word	0
+ 304 0134 0000      		.word	0
+ 305 0136 2A00      		.word	42
+ 306 0138 0000      		.word	0
+ 307 013a 2100      		.word	33
+ 308 013c 2200      		.word	34
+ 309 013e 2300      		.word	35
+ 310 0140 0000      		.word	0
+ 311 0142 0000      		.word	0
+ 312 0144 2602      		.word	550
+ 313 0146 2702      		.word	551
+ 314 0148 0000      		.word	0
+ 315 014a 0000      		.word	0
+ 316 014c 0000      		.word	0
+ 317 014e 0000      		.word	0
+ 318 0150 0000      		.word	0
+ 319 0152 2400      		.word	36
+ 320 0154 2500      		.word	37
+ 321 0156 2600      		.word	38
+ 322 0158 2700      		.word	39
+ 323 015a 0000      		.word	0
+ 324 015c 2F00      		.word	47
+ 325 015e 3000      		.word	48
+ 326 0160 2E00      		.word	46
+ 327 0162 2D00      		.word	45
+ 328 0164 3102      		.word	561
+ 329 0166 0000      		.word	0
+ 330 0168 0000      		.word	0
+ 331 016a 0000      		.word	0
+ 332 016c 0000      		.word	0
+ 333 016e 0000      		.word	0
+ 334 0170 0000      		.word	0
+ 335 0172 0000      		.word	0
+ 336 0174 0000      		.word	0
+ 337 0176 0100      		.word	1
+ 338 0178 0000      		.word	0
+ 339 017a 0000      		.word	0
+ 340 017c 0000      		.word	0
+ 341 017e 0000      		.word	0
+ 342               		.text
+ 343               	.Letext0:
+ 344               		.file 2 "/usr/local/Cellar/avr-gcc@8/8.3.0/avr/include/stdint.h"
+ 345               		.file 3 "/usr/local/Cellar/avr-gcc@8/8.3.0/lib/avr-gcc/8/gcc/avr/8.3.0/include/stddef.h"
+ 346               		.file 4 "tmk_core/common/keyboard.h"
+ 347               		.file 5 "tmk_core/common/keycode.h"
+ 348               		.file 6 "tmk_core/common/action.h"
+ 349               		.file 7 "tmk_core/common/report.h"
+ 350               		.file 8 "tmk_core/common/host.h"
+ 351               		.file 9 "tmk_core/common/avr/xprintf.h"
+ 352               		.file 10 "tmk_core/common/debug.h"
+ 353               		.file 11 "quantum/keycode_config.h"
+ 354               		.file 12 "quantum/quantum_keycodes.h"
+ 355               		.file 13 "quantum/keymap.h"
+ 356               		.file 14 "./quantum/color.h"
+ 357               		.file 15 "quantum/rgblight.h"
+ 358               		.file 16 "tmk_core/common/action_layer.h"
+ 359               		.file 17 "tmk_core/common/timer.h"
+ 360               		.file 18 "tmk_core/common/action_util.h"
+ 361               		.file 19 "/usr/local/Cellar/avr-gcc@8/8.3.0/avr/include/stdlib.h"
+ 362               		.file 20 "quantum/quantum.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:13     .text.process_record_user:0000000000000000 process_record_user
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:128    .progmem.data.__c.3676:0000000000000000 __c.3676
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:143    .progmem.data.__c.3666:0000000000000000 __c.3666
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:138    .progmem.data.__c.3670:0000000000000000 __c.3670
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:133    .progmem.data.__c.3673:0000000000000000 __c.3673
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccRuiUGP.s:149    .progmem.data.keymaps:0000000000000000 keymaps
+
+UNDEFINED SYMBOLS
+send_string_P

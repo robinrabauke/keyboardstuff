@@ -1,0 +1,78 @@
+   1               		.file	"niu_mini.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.matrix_init_kb,"ax",@progbits
+  11               	.global	matrix_init_kb
+  13               	matrix_init_kb:
+  14               	.LFB17:
+  15               		.file 1 "keyboards/niu_mini/niu_mini.c"
+   1:keyboards/niu_mini/niu_mini.c **** #include "niu_mini.h"
+   2:keyboards/niu_mini/niu_mini.c **** 
+   3:keyboards/niu_mini/niu_mini.c **** #ifdef SWAP_HANDS_ENABLE
+   4:keyboards/niu_mini/niu_mini.c **** __attribute__ ((weak))
+   5:keyboards/niu_mini/niu_mini.c **** const keypos_t hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
+   6:keyboards/niu_mini/niu_mini.c ****   {{11, 0}, {10, 0}, {9, 0}, {8, 0}, {7, 0}, {6, 0}, {5, 0}, {4, 0}, {3, 0}, {2, 0}, {1, 0}, {0, 0}
+   7:keyboards/niu_mini/niu_mini.c ****   {{11, 1}, {10, 1}, {9, 1}, {8, 1}, {7, 1}, {6, 1}, {5, 1}, {4, 1}, {3, 1}, {2, 1}, {1, 1}, {0, 1}
+   8:keyboards/niu_mini/niu_mini.c ****   {{11, 2}, {10, 2}, {9, 2}, {8, 2}, {7, 2}, {6, 2}, {5, 2}, {4, 2}, {3, 2}, {2, 2}, {1, 2}, {0, 2}
+   9:keyboards/niu_mini/niu_mini.c ****   {{11, 3}, {10, 3}, {9, 3}, {8, 3}, {7, 3}, {6, 3}, {5, 3}, {4, 3}, {3, 3}, {2, 3}, {1, 3}, {0, 3}
+  10:keyboards/niu_mini/niu_mini.c **** };
+  11:keyboards/niu_mini/niu_mini.c **** #endif
+  12:keyboards/niu_mini/niu_mini.c **** 
+  13:keyboards/niu_mini/niu_mini.c **** void matrix_init_kb(void) {
+  16               		.loc 1 13 27 view -0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  14:keyboards/niu_mini/niu_mini.c **** 	// Turn status LED on
+  15:keyboards/niu_mini/niu_mini.c **** 	DDRE |= (1<<6);
+  22               		.loc 1 15 2 view .LVU1
+  23               		.loc 1 15 7 is_stmt 0 view .LVU2
+  24 0000 6E9A      		sbi 0xd,6
+  16:keyboards/niu_mini/niu_mini.c **** 	PORTE |= (1<<6);
+  25               		.loc 1 16 2 is_stmt 1 view .LVU3
+  26               		.loc 1 16 8 is_stmt 0 view .LVU4
+  27 0002 769A      		sbi 0xe,6
+  17:keyboards/niu_mini/niu_mini.c **** 
+  18:keyboards/niu_mini/niu_mini.c **** 	matrix_init_user();
+  28               		.loc 1 18 2 is_stmt 1 view .LVU5
+  29 0004 0C94 0000 		jmp matrix_init_user
+  30               	.LVL0:
+  31               		.cfi_endproc
+  32               	.LFE17:
+  34               		.text
+  35               	.Letext0:
+  36               		.file 2 "/usr/local/Cellar/avr-gcc@8/8.3.0/avr/include/stdint.h"
+  37               		.file 3 "/usr/local/Cellar/avr-gcc@8/8.3.0/lib/avr-gcc/8/gcc/avr/8.3.0/include/stddef.h"
+  38               		.file 4 "tmk_core/common/report.h"
+  39               		.file 5 "tmk_core/common/action.h"
+  40               		.file 6 "tmk_core/common/host.h"
+  41               		.file 7 "tmk_core/common/avr/xprintf.h"
+  42               		.file 8 "tmk_core/common/debug.h"
+  43               		.file 9 "quantum/keycode_config.h"
+  44               		.file 10 "quantum/keymap.h"
+  45               		.file 11 "./quantum/color.h"
+  46               		.file 12 "quantum/rgblight.h"
+  47               		.file 13 "tmk_core/common/action_layer.h"
+  48               		.file 14 "tmk_core/common/timer.h"
+  49               		.file 15 "tmk_core/common/action_util.h"
+  50               		.file 16 "/usr/local/Cellar/avr-gcc@8/8.3.0/avr/include/stdlib.h"
+  51               		.file 17 "quantum/quantum.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 niu_mini.c
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccumq9Kx.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccumq9Kx.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccumq9Kx.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccumq9Kx.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccumq9Kx.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccumq9Kx.s:13     .text.matrix_init_kb:0000000000000000 matrix_init_kb
+
+UNDEFINED SYMBOLS
+matrix_init_user

@@ -1,0 +1,369 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.matrix_init_user,"ax",@progbits
+  11               	.global	matrix_init_user
+  13               	matrix_init_user:
+  14               	.LFB17:
+  15               		.file 1 "keyboards/niu_mini/keymaps/default/keymap.c"
+   1:keyboards/niu_mini/keymaps/default/keymap.c **** #include QMK_KEYBOARD_H
+   2:keyboards/niu_mini/keymaps/default/keymap.c **** 
+   3:keyboards/niu_mini/keymaps/default/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+   4:keyboards/niu_mini/keymaps/default/keymap.c **** 
+   5:keyboards/niu_mini/keymaps/default/keymap.c **** 	/* Layer 0
+   6:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * ,-----------------------------------------------------------------------------------.
+   7:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * | Esc  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+   8:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+-------------+------+------+------+------+------|
+   9:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * | Tab  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
+  10:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+------|------+------+------+------+------+------|
+  11:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |Enter |
+  12:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+------+------+------+------+------+------+------|
+  13:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * | Ctrl |  GUI | Caps |  Alt |Layer1|    Space    |Layer2|  /   | Left | Down |Right |
+  14:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * `-----------------------------------------------------------------------------------'
+  15:keyboards/niu_mini/keymaps/default/keymap.c **** 	 */
+  16:keyboards/niu_mini/keymaps/default/keymap.c **** 	[0] = LAYOUT_planck_mit(
+  17:keyboards/niu_mini/keymaps/default/keymap.c **** 		KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,  KC_T,   KC_Y,   KC_U,  KC_I,    KC_O,    KC_P,    KC_B
+  18:keyboards/niu_mini/keymaps/default/keymap.c **** 		KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,  KC_G,   KC_H,   KC_J,  KC_K,    KC_L,    KC_SCLN, KC_Q
+  19:keyboards/niu_mini/keymaps/default/keymap.c **** 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,  KC_B,   KC_N,   KC_M,  KC_COMM, KC_DOT,  KC_UP,   KC_E
+  20:keyboards/niu_mini/keymaps/default/keymap.c **** 		KC_LCTL, KC_LGUI, KC_CAPS, KC_LALT, MO(1),     KC_SPC,     MO(2), KC_SLSH, KC_LEFT, KC_DOWN, KC_R
+  21:keyboards/niu_mini/keymaps/default/keymap.c ****   ),
+  22:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  23:keyboards/niu_mini/keymaps/default/keymap.c **** 	/* Layer 1
+  24:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * ,-----------------------------------------------------------------------------------.
+  25:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |   `  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |      |
+  26:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+-------------+------+------+------+------+------|
+  27:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |      | Vol- | Vol+ | Mute |      |      |      |  F11 |  F12 |      |      |      |
+  28:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+------|------+------+------+------+------+------|
+  29:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |      |      |      |      |      |      |      |      |      |      |      |      |
+  30:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+------+------+------+------+------+------+------|
+  31:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * | Reset|      |      |      |      |      |      |      |      |      |      |      |
+  32:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * `-----------------------------------------------------------------------------------'
+  33:keyboards/niu_mini/keymaps/default/keymap.c **** 	 */
+  34:keyboards/niu_mini/keymaps/default/keymap.c **** 	[1] = LAYOUT_planck_mit(
+  35:keyboards/niu_mini/keymaps/default/keymap.c **** 		KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
+  36:keyboards/niu_mini/keymaps/default/keymap.c **** 		_______, KC_VOLD, KC_VOLU, KC_MUTE, _______, _______, _______, KC_F11,  KC_F12,  _______, _______
+  37:keyboards/niu_mini/keymaps/default/keymap.c **** 		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+  38:keyboards/niu_mini/keymaps/default/keymap.c **** 		RESET,   _______, _______, _______, _______,     _______,      _______, _______, _______, _______
+  39:keyboards/niu_mini/keymaps/default/keymap.c **** 	),
+  40:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  41:keyboards/niu_mini/keymaps/default/keymap.c **** 	/* Layer 2 (r_ Indicates RGB Controls)
+  42:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * ,-----------------------------------------------------------------------------------.
+  43:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |      |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |      |
+  44:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+-------------+------+------+------+------+------|
+  45:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |      |r_TOG |r_Mode|r_Hue+|r_Hue-|      |      |   -  |   =  |   [  |   ]  |  \   |
+  46:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+------|------+------+------+------+------+------|
+  47:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |      |BL_TOG|BL_STEP|     |      |      |      |      |      |      |      |      |
+  48:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |------+------+------+------+------+------+------+------+------+------+------+------|
+  49:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * |      |      |      |      |      |      |      |      |      |      |      |      |
+  50:keyboards/niu_mini/keymaps/default/keymap.c **** 	 * `-----------------------------------------------------------------------------------'
+  51:keyboards/niu_mini/keymaps/default/keymap.c **** 	 */
+  52:keyboards/niu_mini/keymaps/default/keymap.c **** 	[2] = LAYOUT_planck_mit(
+  53:keyboards/niu_mini/keymaps/default/keymap.c **** 		_______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  
+  54:keyboards/niu_mini/keymaps/default/keymap.c **** 		_______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, _______, _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC
+  55:keyboards/niu_mini/keymaps/default/keymap.c **** 		_______, BL_TOGG, BL_STEP, _______, _______, _______, _______, _______, _______, _______, _______
+  56:keyboards/niu_mini/keymaps/default/keymap.c **** 		_______, _______, _______, _______, _______,     _______,      _______, _______, _______, _______
+  57:keyboards/niu_mini/keymaps/default/keymap.c ****   )
+  58:keyboards/niu_mini/keymaps/default/keymap.c **** };
+  59:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  60:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  61:keyboards/niu_mini/keymaps/default/keymap.c **** void matrix_init_user(void) {
+  16               		.loc 1 61 29 view -0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  62:keyboards/niu_mini/keymaps/default/keymap.c **** }
+  22               		.loc 1 62 1 view .LVU1
+  23               	/* epilogue start */
+  24 0000 0895      		ret
+  25               		.cfi_endproc
+  26               	.LFE17:
+  28               		.section	.text.matrix_scan_user,"ax",@progbits
+  29               	.global	matrix_scan_user
+  31               	matrix_scan_user:
+  32               	.LFB22:
+  33               		.cfi_startproc
+  34               	/* prologue: function */
+  35               	/* frame size = 0 */
+  36               	/* stack size = 0 */
+  37               	.L__stack_usage = 0
+  38               	/* epilogue start */
+  39 0000 0895      		ret
+  40               		.cfi_endproc
+  41               	.LFE22:
+  43               		.section	.text.process_record_user,"ax",@progbits
+  44               	.global	process_record_user
+  46               	process_record_user:
+  47               	.LVL0:
+  48               	.LFB19:
+  63:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  64:keyboards/niu_mini/keymaps/default/keymap.c **** void matrix_scan_user(void) {
+  65:keyboards/niu_mini/keymaps/default/keymap.c **** }
+  66:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  67:keyboards/niu_mini/keymaps/default/keymap.c **** bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  49               		.loc 1 67 65 view -0
+  50               		.cfi_startproc
+  51               	/* prologue: function */
+  52               	/* frame size = 0 */
+  53               	/* stack size = 0 */
+  54               	.L__stack_usage = 0
+  68:keyboards/niu_mini/keymaps/default/keymap.c **** 	return true;
+  55               		.loc 1 68 2 view .LVU3
+  69:keyboards/niu_mini/keymaps/default/keymap.c **** }
+  56               		.loc 1 69 1 is_stmt 0 view .LVU4
+  57 0000 81E0      		ldi r24,lo8(1)
+  58               	.LVL1:
+  59               	/* epilogue start */
+  60               		.loc 1 69 1 view .LVU5
+  61 0002 0895      		ret
+  62               		.cfi_endproc
+  63               	.LFE19:
+  65               		.section	.text.led_set_user,"ax",@progbits
+  66               	.global	led_set_user
+  68               	led_set_user:
+  69               	.LVL2:
+  70               	.LFB20:
+  70:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  71:keyboards/niu_mini/keymaps/default/keymap.c **** void led_set_user(uint8_t usb_led) {
+  71               		.loc 1 71 36 is_stmt 1 view -0
+  72               		.cfi_startproc
+  73               	/* prologue: function */
+  74               	/* frame size = 0 */
+  75               	/* stack size = 0 */
+  76               	.L__stack_usage = 0
+  72:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  73:keyboards/niu_mini/keymaps/default/keymap.c **** 	if (usb_led & (1 << USB_LED_NUM_LOCK)) {
+  77               		.loc 1 73 2 view .LVU7
+  74:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  75:keyboards/niu_mini/keymaps/default/keymap.c **** 	} else {
+  76:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  77:keyboards/niu_mini/keymaps/default/keymap.c **** 	}
+  78               		.loc 1 77 2 view .LVU8
+  78:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  79:keyboards/niu_mini/keymaps/default/keymap.c **** 	if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
+  79               		.loc 1 79 2 view .LVU9
+  80:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  81:keyboards/niu_mini/keymaps/default/keymap.c **** 	} else {
+  82:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  83:keyboards/niu_mini/keymaps/default/keymap.c **** 	}
+  80               		.loc 1 83 2 view .LVU10
+  84:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  85:keyboards/niu_mini/keymaps/default/keymap.c **** 	if (usb_led & (1 << USB_LED_SCROLL_LOCK)) {
+  81               		.loc 1 85 2 view .LVU11
+  86:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  87:keyboards/niu_mini/keymaps/default/keymap.c **** 	} else {
+  88:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  89:keyboards/niu_mini/keymaps/default/keymap.c **** 	}
+  82               		.loc 1 89 2 view .LVU12
+  90:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  91:keyboards/niu_mini/keymaps/default/keymap.c **** 	if (usb_led & (1 << USB_LED_COMPOSE)) {
+  83               		.loc 1 91 2 view .LVU13
+  92:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  93:keyboards/niu_mini/keymaps/default/keymap.c **** 	} else {
+  94:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  95:keyboards/niu_mini/keymaps/default/keymap.c **** 	}
+  84               		.loc 1 95 2 view .LVU14
+  96:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  97:keyboards/niu_mini/keymaps/default/keymap.c **** 	if (usb_led & (1 << USB_LED_KANA)) {
+  85               		.loc 1 97 2 view .LVU15
+  98:keyboards/niu_mini/keymaps/default/keymap.c **** 
+  99:keyboards/niu_mini/keymaps/default/keymap.c **** 	} else {
+ 100:keyboards/niu_mini/keymaps/default/keymap.c **** 
+ 101:keyboards/niu_mini/keymaps/default/keymap.c **** 	}
+  86               		.loc 1 101 2 view .LVU16
+  87               	/* epilogue start */
+ 102:keyboards/niu_mini/keymaps/default/keymap.c **** 
+ 103:keyboards/niu_mini/keymaps/default/keymap.c **** }
+  88               		.loc 1 103 1 is_stmt 0 view .LVU17
+  89 0000 0895      		ret
+  90               		.cfi_endproc
+  91               	.LFE20:
+  93               	.global	keymaps
+  94               		.section	.progmem.data.keymaps,"a"
+  97               	keymaps:
+  98 0000 2900      		.word	41
+  99 0002 1400      		.word	20
+ 100 0004 1A00      		.word	26
+ 101 0006 0800      		.word	8
+ 102 0008 1500      		.word	21
+ 103 000a 1700      		.word	23
+ 104 000c 1C00      		.word	28
+ 105 000e 1800      		.word	24
+ 106 0010 0C00      		.word	12
+ 107 0012 1200      		.word	18
+ 108 0014 1300      		.word	19
+ 109 0016 2A00      		.word	42
+ 110 0018 2B00      		.word	43
+ 111 001a 0400      		.word	4
+ 112 001c 1600      		.word	22
+ 113 001e 0700      		.word	7
+ 114 0020 0900      		.word	9
+ 115 0022 0A00      		.word	10
+ 116 0024 0B00      		.word	11
+ 117 0026 0D00      		.word	13
+ 118 0028 0E00      		.word	14
+ 119 002a 0F00      		.word	15
+ 120 002c 3300      		.word	51
+ 121 002e 3400      		.word	52
+ 122 0030 E100      		.word	225
+ 123 0032 1D00      		.word	29
+ 124 0034 1B00      		.word	27
+ 125 0036 0600      		.word	6
+ 126 0038 1900      		.word	25
+ 127 003a 0500      		.word	5
+ 128 003c 1100      		.word	17
+ 129 003e 1000      		.word	16
+ 130 0040 3600      		.word	54
+ 131 0042 3700      		.word	55
+ 132 0044 5200      		.word	82
+ 133 0046 2800      		.word	40
+ 134 0048 E000      		.word	224
+ 135 004a E300      		.word	227
+ 136 004c 3900      		.word	57
+ 137 004e E200      		.word	226
+ 138 0050 0151      		.word	20737
+ 139 0052 2C00      		.word	44
+ 140 0054 0000      		.word	0
+ 141 0056 0251      		.word	20738
+ 142 0058 3800      		.word	56
+ 143 005a 5000      		.word	80
+ 144 005c 5100      		.word	81
+ 145 005e 4F00      		.word	79
+ 146 0060 3500      		.word	53
+ 147 0062 3A00      		.word	58
+ 148 0064 3B00      		.word	59
+ 149 0066 3C00      		.word	60
+ 150 0068 3D00      		.word	61
+ 151 006a 3E00      		.word	62
+ 152 006c 3F00      		.word	63
+ 153 006e 4000      		.word	64
+ 154 0070 4100      		.word	65
+ 155 0072 4200      		.word	66
+ 156 0074 4300      		.word	67
+ 157 0076 0100      		.word	1
+ 158 0078 0100      		.word	1
+ 159 007a AA00      		.word	170
+ 160 007c A900      		.word	169
+ 161 007e A800      		.word	168
+ 162 0080 0100      		.word	1
+ 163 0082 0100      		.word	1
+ 164 0084 0100      		.word	1
+ 165 0086 4400      		.word	68
+ 166 0088 4500      		.word	69
+ 167 008a 0100      		.word	1
+ 168 008c 0100      		.word	1
+ 169 008e 0100      		.word	1
+ 170 0090 0100      		.word	1
+ 171 0092 0100      		.word	1
+ 172 0094 0100      		.word	1
+ 173 0096 0100      		.word	1
+ 174 0098 0100      		.word	1
+ 175 009a 0100      		.word	1
+ 176 009c 0100      		.word	1
+ 177 009e 0100      		.word	1
+ 178 00a0 0100      		.word	1
+ 179 00a2 0100      		.word	1
+ 180 00a4 0100      		.word	1
+ 181 00a6 0100      		.word	1
+ 182 00a8 005C      		.word	23552
+ 183 00aa 0100      		.word	1
+ 184 00ac 0100      		.word	1
+ 185 00ae 0100      		.word	1
+ 186 00b0 0100      		.word	1
+ 187 00b2 0100      		.word	1
+ 188 00b4 0000      		.word	0
+ 189 00b6 0100      		.word	1
+ 190 00b8 0100      		.word	1
+ 191 00ba 0100      		.word	1
+ 192 00bc 0100      		.word	1
+ 193 00be 0100      		.word	1
+ 194 00c0 0100      		.word	1
+ 195 00c2 1E00      		.word	30
+ 196 00c4 1F00      		.word	31
+ 197 00c6 2000      		.word	32
+ 198 00c8 2100      		.word	33
+ 199 00ca 2200      		.word	34
+ 200 00cc 2300      		.word	35
+ 201 00ce 2400      		.word	36
+ 202 00d0 2500      		.word	37
+ 203 00d2 2600      		.word	38
+ 204 00d4 2700      		.word	39
+ 205 00d6 0100      		.word	1
+ 206 00d8 0100      		.word	1
+ 207 00da C25C      		.word	23746
+ 208 00dc C35C      		.word	23747
+ 209 00de C55C      		.word	23749
+ 210 00e0 C65C      		.word	23750
+ 211 00e2 0100      		.word	1
+ 212 00e4 0100      		.word	1
+ 213 00e6 2D00      		.word	45
+ 214 00e8 2E00      		.word	46
+ 215 00ea 2F00      		.word	47
+ 216 00ec 3000      		.word	48
+ 217 00ee 3100      		.word	49
+ 218 00f0 0100      		.word	1
+ 219 00f2 BF5C      		.word	23743
+ 220 00f4 C05C      		.word	23744
+ 221 00f6 0100      		.word	1
+ 222 00f8 0100      		.word	1
+ 223 00fa 0100      		.word	1
+ 224 00fc 0100      		.word	1
+ 225 00fe 0100      		.word	1
+ 226 0100 0100      		.word	1
+ 227 0102 0100      		.word	1
+ 228 0104 0100      		.word	1
+ 229 0106 0100      		.word	1
+ 230 0108 0100      		.word	1
+ 231 010a 0100      		.word	1
+ 232 010c 0100      		.word	1
+ 233 010e 0100      		.word	1
+ 234 0110 0100      		.word	1
+ 235 0112 0100      		.word	1
+ 236 0114 0000      		.word	0
+ 237 0116 0100      		.word	1
+ 238 0118 0100      		.word	1
+ 239 011a 0100      		.word	1
+ 240 011c 0100      		.word	1
+ 241 011e 0100      		.word	1
+ 242               		.text
+ 243               	.Letext0:
+ 244               		.file 2 "/usr/local/Cellar/avr-gcc@8/8.3.0/avr/include/stdint.h"
+ 245               		.file 3 "/usr/local/Cellar/avr-gcc@8/8.3.0/lib/avr-gcc/8/gcc/avr/8.3.0/include/stddef.h"
+ 246               		.file 4 "tmk_core/common/keyboard.h"
+ 247               		.file 5 "tmk_core/common/keycode.h"
+ 248               		.file 6 "tmk_core/common/action.h"
+ 249               		.file 7 "tmk_core/common/report.h"
+ 250               		.file 8 "tmk_core/common/host.h"
+ 251               		.file 9 "tmk_core/common/avr/xprintf.h"
+ 252               		.file 10 "tmk_core/common/debug.h"
+ 253               		.file 11 "quantum/keycode_config.h"
+ 254               		.file 12 "quantum/quantum_keycodes.h"
+ 255               		.file 13 "quantum/keymap.h"
+ 256               		.file 14 "./quantum/color.h"
+ 257               		.file 15 "quantum/rgblight.h"
+ 258               		.file 16 "tmk_core/common/action_layer.h"
+ 259               		.file 17 "tmk_core/common/timer.h"
+ 260               		.file 18 "tmk_core/common/action_util.h"
+ 261               		.file 19 "/usr/local/Cellar/avr-gcc@8/8.3.0/avr/include/stdlib.h"
+ 262               		.file 20 "quantum/quantum.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:13     .text.matrix_init_user:0000000000000000 matrix_init_user
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:31     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:46     .text.process_record_user:0000000000000000 process_record_user
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:68     .text.led_set_user:0000000000000000 led_set_user
+/var/folders/kv/ylqhzlcd2rs16mxjtd8q7x600000gn/T//ccMyrG4Q.s:97     .progmem.data.keymaps:0000000000000000 keymaps
+
+NO UNDEFINED SYMBOLS
